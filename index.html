@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will You Be My Valentine? 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  color: white;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.photos img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.heart {
+  font-size: 3rem;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+button {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background-color: #4CAF50;
+  color: white;
+  margin-right: 20px;
+}
+
+#noBtn {
+  background-color: #f44336;
+  color: white;
+  position: absolute;
+}
+
+.love {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="proposal">
+
+  <div class="photos">
+    <img src="me2.jpg" alt="Me">
+    <div class="heart">❤️</div>
+    <img src="her.jpg" alt="Her">
+  </div>
+
+  <h1>Will you be my Valentine? 💕</h1>
+
+  <button id="yesBtn" onclick="sayYes()">YES 💖</button>
+  <button id="noBtn" onmouseover="moveNo()">NO 💔</button>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+function moveNo() {
+  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+function sayYes() {
+  document.body.innerHTML = `
+    <div class="container">
+      <h1>Yayyyyy!!! 💖🥰</h1>
+      <p class="love">
+        From this moment on,<br>
+        my favorite picture will always be <b>us</b> ❤️<br><br>
+        Thank you for choosing me.<br>
+        I promise endless smiles, care, and love 💕<br><br>
+        See you on Valentine’s Day 🌹✨
+      </p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
